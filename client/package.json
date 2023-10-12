@@ -10,10 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "antd": "^5.10.0",
+    "axios": "^1.5.1",
+    "google-map-react": "^2.2.1",
+    "google-maps": "^4.3.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.8.0"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.54.3",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
