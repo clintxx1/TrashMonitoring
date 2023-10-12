@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
-    console.log(e);
     auth
       .login(e)
       .then(async (res) => {
