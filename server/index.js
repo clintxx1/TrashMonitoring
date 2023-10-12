@@ -12,7 +12,7 @@ const port = process.env.PORT;
 const dbURI = process.env.ATLAS_URI;
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(bodyParser.json(), urlencodedParser);
-app.use(cors());
+app.use(cors("*"));
 app.use(express.json());
 
 // APIs
