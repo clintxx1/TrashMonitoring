@@ -5,8 +5,8 @@ import {
   AppstoreOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  FormOutlined,
-  LineChartOutlined,
+  DeleteOutlined,
+  HistoryOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -21,22 +21,22 @@ const items = [
   },
   {
     key: "trash-bin",
-    icon: <FormOutlined />,
+    icon: <DeleteOutlined />,
     label: "Trash Bin",
   },
   {
     key: "user-management",
-    icon: <AppstoreOutlined />,
+    icon: <UserOutlined />,
     label: "User Management",
   },
   {
     key: "history",
-    icon: <LineChartOutlined />,
+    icon: <HistoryOutlined />,
     label: "History",
   },
   {
     key: "settings",
-    icon: <UserOutlined />,
+    icon: <AppstoreOutlined />,
     label: "Settings",
   },
 ];
@@ -44,7 +44,7 @@ const items = [
 const GuestLayout = () => {
   const { Header, Content, Footer } = Layout;
   const location = useLocation();
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const { firstName, middleName, lastName } = auth.getUserInfo();
   const navigate = useNavigate();
 
@@ -97,7 +97,7 @@ const GuestLayout = () => {
           <p className="text-sm font-semibold md:text-xl">Trash Monitoring</p>
         </div>
         <div className="flex flex-row items-center justify-center">
-          <p className="mr-2 text-base font-semibold">{`${firstName ?? ""} ${`${
+          <p className="mr-2 text-base font-semibold capitalize">{`${firstName ?? ""} ${`${
             middleName ? `${middleName[0]}.` : ""
           }`} ${lastName ?? ""}`}</p>
           <CustomDropdown />
@@ -126,7 +126,7 @@ const GuestLayout = () => {
             inlineCollapsed={collapsed}
           />
         </div>
-        <Layout className="flex p-0 m-0">
+        <Layout className="flex p-0 m-2">
           <Content className="m-0 p-0">
             <Outlet />
           </Content>
