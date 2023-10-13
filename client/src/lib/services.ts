@@ -29,9 +29,10 @@ const auth = {
     const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
     return JSON.parse(window.atob(base64));
   },
-  login(credential:any) {
-    return fetch(`${import.meta.env.VITE_APP_API_URL}/login`, {
+  async login(credential:any) {
+    return await fetch(`${import.meta.env.VITE_APP_API_URL}/login`, {
       method: "POST",
+      mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
