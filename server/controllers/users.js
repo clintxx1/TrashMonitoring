@@ -1,9 +1,6 @@
-import express from "express";
-import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import cors from "cors";
 import { registerUser } from "../repositories/users.js";
 import UserModel from "../models/user.js";
 
@@ -46,7 +43,6 @@ export const login = async (req, res) => {
         .send({ message: "Incorrect Username or Password" });
 
     const match = await bcrypt.compare(password, user.password);
-    console.log(match);
     if (!match)
       return res
         .status(400)
