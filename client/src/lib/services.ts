@@ -32,7 +32,6 @@ const auth = {
   async login(credential:any) {
     return await fetch(`${import.meta.env.VITE_APP_API_URL}/login`, {
       method: "POST",
-      mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
